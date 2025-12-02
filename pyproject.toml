@@ -1,0 +1,32 @@
+[project]
+name = "chat-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "aiomysql",
+    "pymysql",
+    "python-multipart",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-dotenv",
+    "langchain==0.1.16",
+    "langchain-community",
+    "langchain-huggingface",
+    "faiss-cpu",
+    "pypdf",
+    "groq",
+    "requests",
+    "alembic",
+    "transformers",
+    "torch",
+    "accelerate",
+    "pydantic[email]>=2.12.5",
+    "sentence-transformers>=5.1.2",
+    "argon2-cffi>=25.1.0",
+    "email-validator>=2.3.0",
+]
