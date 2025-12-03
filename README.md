@@ -88,7 +88,7 @@ Start the development server using Uvicorn:
 uvicorn main:app --reload
 ```
 The API will be available  http://127.0.0.1:8000.
-## 📖 Usage Guide
+##  Usage Guide
 
 1.  **Open API Documentation**: Go to `http://127.0.0.1:8000/doc` in your browser.
 2.  **Register**:
