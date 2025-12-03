@@ -30,3 +30,30 @@ dependencies = [
     "argon2-cffi>=25.1.0",
     "email-validator>=2.3.0",
 ]
+
+[dependency-groups]
+dev = [
+    "accelerate>=1.12.0",
+    "aiomysql>=0.3.2",
+    "alembic>=1.17.2",
+    "argon2-cffi>=25.1.0",
+    "email-validator>=2.3.0",
+    "faiss-cpu>=1.13.0",
+    "fastapi>=0.123.4",
+    "langchain==0.1.16",
+    "langchain-community>=0.0.38",
+    "langchain-huggingface>=0.0.3",
+    "passlib[argon2]>=1.7.4",
+    "pydantic[email]>=2.12.5",
+    "pymysql>=1.1.2",
+    "pypdf>=6.4.0",
+    "python-dotenv>=1.2.1",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.20",
+    "requests>=2.32.5",
+    "sentence-transformers>=5.1.2",
+    "sqlalchemy>=2.0.44",
+    "torch>=2.9.1",
+    "transformers>=4.57.3",
+    "uvicorn>=0.38.0",
+]

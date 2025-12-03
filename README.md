@@ -1,50 +1,33 @@
-# Dotsy Chat Agent
-
+# BOT GENAI
 A powerful, privacy-focused Chat Agent built with FastAPI, MySQL, and Local AI models. This project allows users to register, upload documents (PDF/Text), and chat with them using a Retrieval-Augmented Generation (RAG) pipeline entirely on their local machine.
+**GitHub Repository**: [https://github.com/amanchoudhary7891852184/chatbot-genai.git]
 
-**GitHub Repository**: [https://github.com/Prakuljn/Chat-Agent](https://github.com/Prakuljn/Chat-Agent)
-
-## 🚀 Features
-
+##  Features
 -   **User Authentication**: Simplified Registration and Login using JWT and Argon2 hashing.
 -   **Document Management**: Upload and Delete files (PDF, TXT).
--   **Local Vector Store**: Uses **FAISS** to index documents locally.
--   **Local Embeddings**: Uses **HuggingFace Embeddings** (`all-MiniLM-L6-v2`) for privacy and speed.
--   **Local LLM**: Powered by **Google's Flan-T5 Large** running locally via HuggingFace Transformers. **No API keys required!**
--   **Chat Memory**: Remembers context from the current conversation and persists history in the vector store for long-term recall.
--   **Database**: **MySQL** for robust data persistence (Users, Files, Chat History).
--   **Modern Architecture**: Clean separation of concerns (Router -> Controller -> Service -> Model).
+-   **Local Vector Store**: Uses **FAISS** to index documents locally.   
+-  **Local LLM**: Powered by **Google's Flan-T5 Large** running locally via HuggingFace Transformers. **No API keys required!**
+- **Local Embeddings**: Uses **HuggingFace Embeddings** (`all-MiniLM-L6-v2`) for privacy and speed.
+-  **Chat Memory**: Remembers context from the current conversation and persists history in the vector store for long-term recall.
+-  **Database**: **MySQL** for robust data persistence (Users, Files, Chat History).
+-  **Modern Architecture**: Clean separation of concerns (Router -> Controller -> Service -> Model).
 
-## 🛠️ Tech Stack
-
+##  Tech Stack
 -   **Backend**: FastAPI, Uvicorn
 -   **Database**: MySQL, SQLAlchemy (Async), Alembic (Migrations)
 -   **AI/ML**: LangChain, FAISS, Transformers, Torch, Accelerate, Sentence-Transformers
 -   **Auth**: Python-Jose (JWT), Passlib (Argon2)
 
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-1.  **Python 3.10+**: [Download Python](https://www.python.org/downloads/)
-2.  **MySQL Server**: [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
-    -   Make sure the MySQL service is running on `localhost:3306`.
-    -   Remember the `root` password you set during installation.
-3.  **Git**: [Download Git](https://git-scm.com/downloads)
-
-## ⚙️ Installation & Setup
-
+ ##  Installation & Setup
 Follow these steps to get the project running on your local machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Prakuljn/Chat-Agent.git
-cd Chat-Agent
+git clone https://github.com/amanchoudhary7891852184/chatbot-genai.git
+cd Chatgenai
 ```
-
 ### 2. Create a Virtual Environment
 It's recommended to use a virtual environment to manage dependencies.
-
 **Using `uv` (Recommended for speed):**
 ```bash
 uv venv
@@ -57,15 +40,13 @@ python -m venv .venv
 # Windows
 .venv\Scripts\activate
 # Linux/Mac
-source .venv/bin/activate
+source .venv/bin/activate 
 ```
-
 ### 3. Install Dependencies
 Install all required Python packages from `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
-
 ### 4. Configure Environment Variables
 Create a file named `.env` in the root directory of the project. Copy the following configuration into it:
 
@@ -82,9 +63,6 @@ SECRET_KEY="secret"  # Change this to a strong random string for production
 ALGORITHM="HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
-
-> **Note**: Ensure `DB_PASSWORD` matches the password you set for your local MySQL root user.
-
 ### 5. Setup Database
 This project includes a script to automatically create the database and apply migrations.
 
@@ -102,19 +80,17 @@ alembic upgrade head
 ```
 *You should see output indicating that tables are being created.*
 
-## 🏃‍♂️ Running the Application
+## Running the Application
 
 Start the development server using Uvicorn:
 
 ```bash
 uvicorn main:app --reload
 ```
-
-The API will be available at `http://127.0.0.1:8000`.
-
+The API will be available  http://127.0.0.1:8000.
 ## 📖 Usage Guide
 
-1.  **Open API Documentation**: Go to `http://127.0.0.1:8000/docs` in your browser.
+1.  **Open API Documentation**: Go to `http://127.0.0.1:8000/doc` in your browser.
 2.  **Register**:
     -   Use the `/auth/register` endpoint.
     -   Click "Try it out", enter your details, and execute.
@@ -132,8 +108,7 @@ The API will be available at `http://127.0.0.1:8000`.
 6.  **Delete File**:
     -   Use `/upload/delete/{file_id}` to remove a file.
 
-## 🧠 How It Works
-
+##  How It Works
 ### 1. Data Storage & Embeddings
 -   **Files**: Uploaded files are saved to the local `uploads/` directory.
 -   **Embeddings**: Text is extracted, chunked, and embedded using `all-MiniLM-L6-v2`.
